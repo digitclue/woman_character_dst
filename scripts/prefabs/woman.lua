@@ -13,12 +13,12 @@ local start_inv = {
 -- When the character is revived from human
 local function onbecamehuman(inst)
 	-- Set speed when not a ghost (optional)
-	inst.components.locomotor:SetExternalSpeedMultiplier(inst, "women_speed_mod", 1)
+	inst.components.locomotor:SetExternalSpeedMultiplier(inst, "woman_speed_mod", 1)
 end
 
 local function onbecameghost(inst)
 	-- Remove speed modifier when becoming a ghost
-   inst.components.locomotor:RemoveExternalSpeedMultiplier(inst, "women_speed_mod")
+   inst.components.locomotor:RemoveExternalSpeedMultiplier(inst, "woman_speed_mod")
 end
 
 -- When loading or spawning the character
@@ -37,7 +37,7 @@ end
 -- This initializes for both the server and client. Tags can be added here.
 local common_postinit = function(inst) 
 	-- Minimap icon
-	inst.MiniMapEntity:SetIcon( "women.tex" )
+	inst.MiniMapEntity:SetIcon( "woman.tex" )
 end
 
 -- This initializes for the server only. Components are added here.
@@ -64,4 +64,4 @@ local master_postinit = function(inst)
 	
 end
 
-return MakePlayerCharacter("women", prefabs, assets, common_postinit, master_postinit, start_inv)
+return MakePlayerCharacter("woman", prefabs, assets, common_postinit, master_postinit, start_inv)
